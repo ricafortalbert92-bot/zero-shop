@@ -3,57 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZERO - Home Gadgets Made Simple</title>
+<title>ZERO. - Shopee ng Pinas Pero Mas Mura!</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f7f5f0;color:#111}
-header{background:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 1px 10px rgba(0,0,0,.06)}
-.logo{font-size:28px;font-weight:900;letter-spacing:2px}
-nav a{margin:0 10px;text-decoration:none;color:#111;font-size:14px}
-.cart-btn{background:#111;color:#fff;border:0;padding:10px 16px;border-radius:20px;cursor:pointer}
-.hero{text-align:center;padding:40px 16px;background:#eef0f2}
-.hero h1{font-size:32px;margin-bottom:8px}
-.hero p{color:#555;margin-bottom:16px}
-.hero button{background:#111;color:#fff;border:0;padding:12px 24px;border-radius:6px;cursor:pointer}
-.search{max-width:600px;margin:18px auto 0;display:flex;gap:8px}
-.search input{flex:1;padding:12px;border:1px solid #ddd;border-radius:8px}
-.search button{padding:12px 18px;background:#111;color:#fff;border:0;border-radius:8px;cursor:pointer}
-.grid{max-width:1100px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.card img{width:100%;height:200px;object-fit:cover}
-.card-body{padding:14px}
-.card-body h3{font-size:16px}
-.price{font-weight:800;margin:8px 0}
-.tag{font-size:12px;color:#666}
-.buy{width:100%;background:#111;color:#fff;border:0;padding:11px;border-radius:8px;cursor:pointer;margin-top:8px}
-footer{text-align:center;padding:20px;font-size:13px;color:#666}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:99}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#fff5f5;padding-bottom:70px}
+header{background:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
+.logo{font-size:32px;font-weight:900;letter-spacing:-1px}
+.logo span{font-size:32px}
+.top{display:flex;gap:8px;align-items:center}
+.btn-seller{background:#e60023;color:#fff;border:0;padding:11px 16px;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer}
+.btn-cart{background:#111;color:#fff;border:0;width:46px;height:42px;border-radius:30px;font-size:20px;cursor:pointer}
+.hero{background:linear-gradient(135deg,#ff0000,#ff4d00,#ff7a00);color:#fff;padding:24px 16px 38px;position:relative;overflow:hidden}
+.hero h1{font-size:31px;line-height:1.05;font-weight:900}
+.hero p{font-size:14px;margin:10px 0 14px;font-weight:600}
+.hero-btn{background:#fff;color:#c00000;border:0;padding:9px 14px;border-radius:20px;font-weight:900;font-size:15px;cursor:pointer}
+.hero-badges{display:flex;gap:8px;margin-top:14px;justify-content:flex-end;flex-wrap:wrap}
+.hero-badges span{background:#fff;color:#333;padding:6px 10px;border-radius:10px;font-size:12px;font-weight:700}
+.search{margin:-18px 14px 0;position:relative;z-index:5;display:flex;gap:0;background:#fff;border-radius:30px;box-shadow:0 5px 20px rgba(0,0,0,.15);overflow:hidden}
+.search input{flex:1;padding:15px 16px;border:0;outline:none;font-size:15px}
+.search button{background:#111;color:#fff;border:0;padding:0 18px;font-size:18px;cursor:pointer}
+.cats{display:flex;gap:14px;overflow-x:auto;padding:18px 14px;scrollbar-width:none}
+.cat{flex:0 0 auto;text-align:center;cursor:pointer;min-width:70px}
+.cat .icon{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:auto;color:#fff}
+.cat p{font-size:14px;font-weight:600;margin-top:8px}
+.cat.active p{color:#e60023}
+.section{padding:6px 14px;display:flex;justify-content:space-between;align-items:center}
+.section h2{font-size:22px;font-weight:800}
+.section span{color:#e60023;font-size:14px;font-weight:700;cursor:pointer}
+.grid{padding:8px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr);max-width:1100px;margin:auto}}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);position:relative}
+.card img{width:100%;height:180px;object-fit:cover;background:#fff}
+.sale{position:absolute;top:12px;right:10px;background:#e60023;color:#fff;font-size:12px;font-weight:800;padding:5px 8px;border-radius:5px}
+.body{padding:12px}
+.name{font-size:16px;font-weight:600;line-height:1.2}
+.stars{font-size:14px;margin:6px 0;color:#333}
+.stars b{color:#ffb800}
+.priceRow{display:flex;gap:6px;align-items:center}
+.price{font-size:20px;font-weight:800;color:#e60023}
+.old{font-size:15px;color:#888;text-decoration:line-through}
+.shop{font-size:13px;color:#333;margin-top:4px}
+.buy{width:100%;background:#111;color:#fff;border:0;padding:11px;border-radius:10px;font-weight:800;cursor:pointer;margin-top:8px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0 6px;border-top:1px solid #eee;z-index:30}
+.bottom div{text-align:center;font-size:12px;cursor:pointer;color:#666;font-weight:600}
+.bottom div.active{color:#e60023}
+.bottom div span{font-size:24px;display:block}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:99}
 .modal.open{display:flex}
-.box{background:#fff;width:92%;max-width:520px;border-radius:14px;padding:20px;max-height:90vh;overflow:auto}
-.box input,.box select,.box textarea{width:100%;padding:11px;margin:6px 0;border:1px solid #ddd;border-radius:8px}
-.box button{width:100%;padding:12px;background:#111;color:#fff;border:0;border-radius:8px;cursor:pointer;margin-top:8px}
-.close{float:right;cursor:pointer;font-size:20px}
-.admin-link{text-align:center;margin:20px}
-.admin-link a{color:#888;font-size:13px;cursor:pointer}
+.box{background:#fff;width:100%;max-width:560px;border-radius:22px 22px 0 0;padding:20px;max-height:92vh;overflow:auto}
+@media(min-width:600px){.modal{align-items:center}.box{border-radius:20px}}
+.box input,.box select,.box textarea{width:100%;padding:13px;margin:6px 0;border:1px solid #eee;border-radius:12px;background:#fafafa}
+.box button{width:100%;padding:14px;background:#e60023;color:#fff;border:0;border-radius:12px;font-weight:800;cursor:pointer;margin-top:8px}
+.close{float:right;cursor:pointer;font-size:22px}
 .small{font-size:12px;color:#888}
-.badge{background:#e6ffe6;padding:4px 8px;border-radius:20px;font-size:12px}
-@media(max-width:600px){.hero h1{font-size:24px}nav{display:none}}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="logo">ZERO</div>
-  <nav><a href="#">Home</a><a href="#products">Shop</a><a href="#">About</a><a href="#">Contact</a></nav>
-  <button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+<div class="logo">ZERO<span>.</span></div>
+<div class="top"><button class="btn-seller" onclick="openSellerRegister()">Maging Seller</button><button class="btn-cart" onclick="openCart()">🛒</button></div>
 </header>
 
 <div class="hero">
-  <h1>HOME GADGETS MADE SIMPLE</h1>
-  <p>Quality gadgets delivered to your door — Fast. Reliable. COD Available.</p>
-  <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
-  <div class="search">
-    <input id="searchInput" placeholder="Search gadgets... e.g. Fan, Light" oninput="render()">
-    <button onclick="render()">🔍</button>
-  </div>
-  <p class="small" style="margin-top:10px">FREE SHIPPING OVER ₱1000 • COD NATIONWIDE • 7-DAY RETURNS</p
+<h1>SHOPEE NG PINAS<br>PERO MAS MURA!</h1>
+<p>Pinaka-murang palengke online. Sulit deals araw-araw!</p>
+<button class="hero-btn" onclick="openSellerRegister()">MAGING SELLER - LIBRE!</button>
+<div class="hero-badges"><span>🚚 COD Nationwide</span><span>⚡ Same Day Ship</span></div>
+</div>
+
+<div class="search"><input id="search" placeholder="🔍 Maghanap ng produkto, brand, o shop..." oninput="render()"><button onclick="render()">›</button></div>
+
+<div class="cats" id="cats"></div>
+
+<div class="section"><h2>Trending Ngayon</h2><span onclick="setCat('')">Tingnan Lahat ›</span></div>
+<div id="products" class="grid"></div>
+
+<div class="section" style="margin-top:10px"><h2>🏪 Top Sellers</h2></div>
+<div style="padding:0 14px 10px;display:flex;gap:10px;overflow-x:auto">
+<div style="background:#fff;padding:14px;border-radius:14px;min-width:150px;text-align:center"><div style="font-size:28px">🏪</div><b>Zero Official</b><br><span class="small">⭐ 4.9 • 2.1k sold</span></div>
+<div style="background:#fff;padding:14px;border-radius:14px;min-width:150px;text-align:center"><div style="font-size:28px">💄</div><b>Beauty Hub</b><br><span class="small">⭐ 4.8 • 1.5k sold</span></div>
+<div style="background:#fff;padding:14px;border-radius:14px;min-width:150px;text-align:center"><div style="font-size:28px">🐶</div><b>Pet Lover PH</b><br><span class="small">⭐ 5.0 • 980 sold</span></div>
+</div>
+
+<div class="bottom">
+<div class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span>🏠</span>Home</div>
+<div onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})"><span>🛍️</span>Shop</div>
+<div onclick="setCat('')"><span>%</span>Deals</div>
+<div onclick="openSellerLogin()"><span>💬</span>Chat</div>
+<div onclick="openSellerLogin()"><span>👤</span>Ako</div>
+</div>
+
+<!-- CART -->
+<div id="cartModal" class="modal"><div class="box"><span class="close" onclick="closeAll()">✕</span><h2>🛒 Cart (<span id="cartCount">0</span>)</h2><div id="cartItems"></div><h3>Total: <span id="cartTotal">₱0</span></h3><input id="cName" placeholder="Full Name"><input id="cPhone" placeholder="Phone"><textarea id="cAddr" placeholder="Complete Address"></textarea><select id="cPay"><option>COD - Cash on Delivery</option><option>GCash</option></select><button onclick="checkout()">✅ Confirm Order - COD</button></div></div>
+
+<!-- REGISTER -->
+<div id="regModal" class="modal"><div class="box"><span class="close" onclick="closeAll()">✕</span><h2>🚀 Maging Seller - LIBRE!</h2><p class="small">Magbenta ka na, walang bayad!</p><input id="sName" placeholder="Shop Name - e.g. Albert Gadgets"><input id="sUser" placeholder="Username"><input id="sPass" placeholder="Password"><input id="sPhone" placeholder="Phone / GCash"><button onclick="registerSeller()">Gawa na ng Shop Ko!</button></div></div>
+
+<!-- LOGIN -->
+<div id="sellerLoginModal" class="modal"><div class="box"><span class="close" onclick="closeAll()">✕</span><h2>Seller Login</h2><p class="small">Demo: seller1 / 1234 | Admin: <a onclick="openAdmin()" style="cursor:pointer;color:#e60023">Admin Login</a></p><input id="loginUser" placeholder="Username"><input id="loginPass" type="password" placeholder="Password"><button onclick="loginSeller()">Login</button></div></div>
+
+<!-- DASHBOARD -->
+<div id="sellerDash" class="modal"><div class="box"><span class="close" onclick="closeAll()">✕</span><h2 id="dashTitle">Dashboard</h2><p class="small" id="dashInfo"></p><h3 style="margin-top:14px">➕ Add Product</h3><input id="pName" placeholder="Product Name"><input id="pPrice" type="number" placeholder="Price - e.g. 499"><select id="pCat"><option>Home Gadgets</option><option>Beauty</option><option>Pet</option><option>Fashion</option><option>Food</option></select><input id="pImg" placeholder="Image URL - o blank"><input id="pDesc" placeholder="Description"><button onclick="addProduct()">I-post na!</button><h3 style="margin-top:14px">📦 My Products</h3><div id="myProducts"></div><h3>🧾 My Orders</h3><div id="myOrders"></div><button onclick="logoutSeller()" style="background:#eee;color:#111">Logout</button></div></div>
+
+<!-- ADMIN -->
+<div id="adminModal" class="modal"><div class="box"><span class="close" onclick="closeAll()">✕</span><h2>Admin - Lahat ng Seller</h2><h3>👥 Sellers (<span id="sellerCount"></span>)</h3><div id="adminSellers"></div><h3>📦 Products (<span id="allProdCount"></span>)</h3><div id="adminProducts"></div><h3>🧾 Orders (<span id="allOrderCount"></span>)</h3><div id="adminOrders"></div><button onclick="closeAll()" style="background:#eee;color:#111">Close</button></div></div>
+
+<script>
+let sellers = JSON.parse(localStorage.getItem('zero_sellers_v3')) || [{shop:"Zero Official",user:"seller1",pass:"1234",phone:"0912"}];
+let products = JSON.parse(localStorage.getItem('zero_mkt_v3')) || [
+{id:1,seller:"Zero Official",name:"Mini Portable Fan",price:499,old:890,cat:"Home Gadgets",rating:"⭐⭐⭐⭐⭐",sold:"4.9 • 2.1k sold",img:"https://images.unsplash.com/photo-1565151443833-29bfb2ba8d5c?w=600&q=80"},
+{id:2,seller:"HomeTech PH",name:"LED Desk Light",price:799,old:1290,cat:"Home Gadgets",rating:"",sold:"4.8 • 1.3k sold",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&q=80"},
+{id:3,seller:"EcoLiving",name:"Bamboo Organizer",price:349,old:599,cat:"Home Gadgets",rating:"",sold:"4.7 • 892 sold",img:"https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80"},
+{id:4,seller:"CoolMist Store",name:"Mini Humidifier",price:650,old:1100,cat:"Home Gadgets",rating:"",sold:"4.8 • 1.5k sold",img:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80"},
+{id:5,seller:"Pet Lover PH",name:"Pet Toy - Cute Cat Toy",price:199,old:399,cat:"Pet",rating:"⭐⭐⭐⭐⭐",sold:"4.9 • 5k sold",img:"https://images.unsplash.com/photo-1545249390-eb5f9d2c7d17?w=600&q=80"},
+{id:6,seller:"Beauty Hub",name:"Skincare Set - Glow Up",price:899,old:1599,cat:"Beauty",rating:"⭐⭐⭐⭐⭐",sold:"4.9 • 10k sold",img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80"},
+];
+let cart = JSON.parse(localStorage.getItem('zero_cart_v3')) || [];
+let orders = JSON.parse(localStorage.getItem('zero_orders_v3')) || [];
+let currentSeller=null, activeCat="";
+let catsList=[{n:"Home",e:"🏠",c:"#e60023"},{n:"Beauty",e:"💄",c:"#ff9eb5"},{n:"Pet",e:"🐾",c:"#8b5a2b"},{n:"Fashion",e:"👕",c:"#8b5cf6"},{n:"Food",e:"🍜",c:"#ff8c00"}];
+function save(){localStorage.setItem('zero_sellers_v3',JSON.stringify(sellers));localStorage.setItem('zero_mkt_v3',JSON.stringify(products));localStorage.setItem('zero_cart_v3',JSON.stringify(cart));localStorage.setItem('zero_orders_v3',JSON.stringify(orders));}
+function renderCats(){document.getElementById('cats').innerHTML=catsList.map(c=>`<div class="cat ${activeCat===c.n?'active':''}" onclick="setCat('${c.n}')"><div class="icon" style="background:${c.c}">${c.e}</div><p>${c.n}</p></div>`).join('');}
+function setCat(n){activeCat=n;render();document.getElementById('products').scrollIntoView({behavior:'smooth'});}
+function render(){
+renderCats();
+let q=document.getElementById('search').value.toLowerCase();
+let list=products.filter(p=>(p.name.toLowerCase().includes(q)||p.seller.toLowerCase().includes(q))&&(!activeCat||p.cat===activeCat||(activeCat==="Home"&&p.cat==="Home Gadgets")));
+document.getElementById('products').innerHTML=list.map(p=>{let disc=Math.round((1-p.price/p.old)*100);return `<div class="card"><span class="sale">-${disc}% SALE</span><img src="${p.img}"><div class="body"><div class="name">${p.name}</div><div class="stars">${p.rating||'⭐'} ${p.sold}</div><div class="priceRow"><span class="price">₱${p.price}</span><span class="old">₱${p.old}</span></div><div class="shop">✓ ${p.seller}</div><button class="buy" onclick="addToCart(${p.id})">🛒 Buy Now</button></div></div>`}).join('')||'<p style="text-align:center;padding:20px">Wala pang product dito. Maging Seller ka!</p>';
+document.getElementById('cartCount').innerText=cart.length;
+}
+function addToCart(id){let p=products.find(x=>x.id===id);cart.push(p);save();render();alert(p.name+' added!');openCart();}
+function openCart(){let t=cart.reduce((s,p)=>s+p.price,0);document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee"><span><b>${p.name}</b><br>₱${p.price} • ${p.seller}</span><span onclick="removeCart(${i})" style="cursor:pointer">✕</span></div>`).join(''):'Empty';document.getElementById('cartTotal').innerText='₱'+t;document.getElementById('cartModal').classList.add('open');}
+function removeCart(i){cart.splice(i,1);save();render();openCart();}
+function checkout(){let n=document.getElementById('cName').value,ph=document.getElementById('cPhone').value,a=document.getElementById('cAddr').value,pay=document.getElementById('cPay').value;if(!n||!ph||!a||!cart.length){alert('Fill up!');return;}let t=cart.reduce((s,p)=>s+p.price,0);cart.forEach(p=>orders.push({id:Date.now()+Math.random(),buyer:n,phone:ph,addr:a,pay,total:p.price,seller:p.seller,item:p.name,date:new Date().toLocaleString()}));cart=[];save();render();closeAll();alert('✅ Order Received! Total ₱'+t);}
+function closeAll(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));}
+function openSellerRegister(){document.getElementById('regModal').classList.add('open');}
+function openSellerLogin(){document.getElementById('sellerLoginModal').classList.add('open');}
+function registerSeller(){let shop=document.getElementById('sName').value,user=document.getElementById('sUser').value,pass=document.getElementById('sPass').value,phone=document.getElementById('sPhone').value;if(!shop||!user||!pass){alert('Fill up!');return;}if(sellers.find(s=>s.user===user)){alert('Username taken!');return;}sellers.push({shop,user,pass,phone});save();alert('✅ Welcome '+shop+'! Login ka na!');closeAll();openSellerLogin();}
+function loginSeller(){let u=document.getElementById('loginUser').value,p=document.getElementById('loginPass').value;let s=sellers.find(x=>x.user===u&&x.pass===p);if(!s){alert('Wrong!');return;}currentSeller=s;closeAll();openDashboard();}
+function openDashboard(){document.getElementById('dashTitle').innerText='🏪 '+currentSeller.shop;document.getElementById('dashInfo').innerText='@'+currentSeller.user+' • '+currentSeller.phone;let my=products.filter(p=>p.seller===currentSeller.shop);document.getElementById('myProducts').innerHTML=my.length?my.map(p=>`<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-bottom:6px;display:flex;justify-content:space-between"><span><b>${p.name}</b> - ₱${p.price}</span><button onclick="delProd(${p.id})" style="width:auto;padding:6px 10px;background:#c00">Delete</button></div>`).join(''):'Wala pa. Add ka!';let mo=orders.filter(o=>o.seller===currentSeller.shop);document.getElementById('myOrders').innerHTML=mo.length?mo.map(o=>`<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-bottom:6px"><b>${o.item}</b> - ₱${o.total}<br><span class="small">${o.buyer} • ${o.phone}</span></div>`).join(''):'Wala pang order';document.getElementById('sellerDash').classList.add('open');}
+function addProduct(){if(!currentSeller){alert('Login muna!');return;}let n=document.getElementById('pName').value,pr=parseInt(document.getElementById('pPrice').value),cat=document.getElementById('pCat').value,img=document.getElementById('pImg').value,desc=document.getElementById('pDesc').value||'COD';if(!n||!pr){alert('Name at Price!');return;}products.push({id:Date.now(),seller:currentSeller.shop,name:n,price:pr,old:pr*2,cat,img:img||'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80',rating:"⭐",sold:"5.0 • 0 sold"});save();render();openDashboard();alert('✅ Posted!');}
+function delProd(id){products=products.filter(p=>p.id!==id);save();render();openDashboard();}
+function logoutSeller(){currentSeller=null;closeAll();}
+function openAdmin(){let pass=prompt('Admin Password:');if(pass==='zero123'){document.getElementById('sellerCount').innerText=sellers.length;document.getElementById('adminSellers').innerHTML=sellers.map(s=>`<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-bottom:6px">🏪 <b>${s.shop}</b> @${s.user}</div>`).join('');document.getElementById('allProdCount').innerText=products.length;document.getElementById('adminProducts').innerHTML=products.map(p=>`<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-bottom:6px"><b>${p.name}</b> ₱${p.price} • ${p.seller}</div>`).join('');document.getElementById('allOrderCount').innerText=orders.length;document.getElementById('adminOrders').innerHTML=orders.length?orders.map(o=>`<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-bottom:6px"><b>${o.item}</b> ₱${o.total} • Seller ${o.seller} • Buyer ${o.buyer}</div>`).join(''):'No orders';document.getElementById('adminModal').classList.add('open');}else alert('Wrong!');}
+render();
+</script>
+</body>
+</html>
